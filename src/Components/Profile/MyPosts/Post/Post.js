@@ -8,11 +8,12 @@ const PostPhoto = styled.img`
 `;
 
 
-const Post = () => {
+const Post = (props) => {
   return (
        <div>
       <PostPhoto src={user} alt='profile-photo'></PostPhoto>
-      <span>post</span>
+      <span>{props.message}</span><br/>
+      <span>like: {props.likeCount}</span>
     </div>
   );
 }
