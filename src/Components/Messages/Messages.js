@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import {NavLink} from 'react-router-dom';
 
 const MessagesWrapper = styled.div `
 display: flex;
@@ -9,7 +9,15 @@ width: 300px;
 
 const MessagesItems = styled.div ``;
 
-const Dialog = styled.div ``;
+const MessageItem = styled.div ``;
+
+const MessageLink = styled(NavLink)`
+text-decoration: none;
+color: #000000;
+&:hover {
+  color: #00B388;
+}
+`;
 
 const DialogMessages = styled.div ``;
 
@@ -19,11 +27,11 @@ const Messages = () => {
   return (
     <MessagesWrapper>
      <MessagesItems>
-      <Dialog>Roman</Dialog>
-      <Dialog>Arthur</Dialog>
-      <Dialog>Svetlana</Dialog>
-      <Dialog>Dmitry</Dialog>
-      <Dialog>Victoria</Dialog>
+      <MessageItem><MessageLink to='/Messages/1'>Roman</MessageLink></MessageItem>
+      <MessageItem><MessageLink to='/Messages/2'>Arthur</MessageLink></MessageItem>
+      <MessageItem><MessageLink to='/Messages/3'> Svetlana</MessageLink></MessageItem>
+      <MessageItem><MessageLink to='/Messages/4'>Dmitry</MessageLink></MessageItem>
+      <MessageItem><MessageLink to='/Messages/5'>Victoria</MessageLink></MessageItem>
      </MessagesItems>
      <DialogMessages>
      <DialogMessage>Hello, how are you?</DialogMessage>
