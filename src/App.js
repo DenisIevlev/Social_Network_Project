@@ -1,9 +1,14 @@
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
 import Profile from './Components/Profile/Profile';
+import Messages from './Components/Messages/Messages';
+import Music from './Components/Music/Music';
+import News from './Components/News/News';
+import Settings from './Components/Settings/Settings';
 import Footer from './Components/Footer/Footer';
 import styled from 'styled-components';
 import GlobalFonts from './fonts/fontStyles';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 const AppWrapper = styled.div`
     display: grid;
@@ -35,13 +40,23 @@ const ProfileStyle= styled.div`
 
 const App = () => {
   return (
+    <BrowserRouter>
     <AppWrapper>
       <GlobalFonts/>
       <HeaderStyle><Header /></HeaderStyle>
       <NavbarStyle><Navbar /></NavbarStyle>
-      <ProfileStyle><Profile /></ProfileStyle>
+      <ProfileStyle>
+      <Routes>
+      <Route path='/profile'  element={<Profile/>}/>
+      <Route path='/messages' element={<Messages/>}/>
+      <Route path='/music'  element={<Music/>}/>
+      <Route path='/news'  element={<News/>}/>
+      <Route path='/settings'  element={<Settings/>}/>
+      </Routes>
+     </ProfileStyle>
       <FooterStyle><Footer /></FooterStyle>
     </AppWrapper>
+    </BrowserRouter>
   );
 }
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {NavLink} from 'react-router-dom';
 
 const NavbarWrapper = styled.div `
 position: relative;
@@ -8,7 +9,7 @@ background-color: #00B388;
 font-family: 'BeynoFont';
 `;
 
-const NavbarProfileLink = styled.a `
+const NavbarProfileLink = styled(NavLink)`
 position: relative;
 top: 40px;
 left: 75px;
@@ -21,7 +22,7 @@ color: #000000;
 }
 `;
 
-const NavbarMessagesLink = styled.a `
+const NavbarMessagesLink = styled(NavLink)`
 position: relative;
 top: 80px;
 left: 65px;
@@ -34,7 +35,7 @@ color: #000000;
 }
 `;
 
-const NavbarNewsLink = styled.a `
+const NavbarNewsLink = styled(NavLink)`
 position: relative;
 top: 120px;
 left: 85px;
@@ -47,7 +48,7 @@ color: #000000;
 }
 `;
 
-const NavbarMusicLink = styled.a `
+const NavbarMusicLink = styled(NavLink)`
 position: relative;
 top: 160px;
 left: 80px;
@@ -60,7 +61,7 @@ color: #000000;
 }
 `;
 
-const NavbarSettingsLink = styled.a `
+const NavbarSettingsLink = styled(NavLink) `
 position: relative;
 top: 200px;
 left: 70px;
@@ -77,11 +78,11 @@ color: #000000;
 const Navbar = () => {
   return (
     <NavbarWrapper>
-      <NavbarProfileLink href='/Profile'>Profile</NavbarProfileLink><br/>
-      <NavbarMessagesLink href='/Messages'>Messages</NavbarMessagesLink><br/>
-      <NavbarNewsLink href='/News'>News</NavbarNewsLink><br/>
-      <NavbarMusicLink href='/Music'>Music</NavbarMusicLink><br/>
-      <NavbarSettingsLink href='/Settings'>Settings</NavbarSettingsLink>
+      <NavbarProfileLink to='/Profile'>Profile</NavbarProfileLink><br/>
+      <NavbarMessagesLink to='/Messages'>Messages</NavbarMessagesLink><br/>
+      <NavbarNewsLink to='/News'>News</NavbarNewsLink><br/>
+      <NavbarMusicLink to='/Music'>Music</NavbarMusicLink><br/>
+      <NavbarSettingsLink to='/Settings'>Settings</NavbarSettingsLink>
     </NavbarWrapper>
   );
 }
