@@ -1,45 +1,34 @@
 import styled from 'styled-components';
-import {NavLink} from 'react-router-dom';
+import MessageItem from './MessageItem/MessageItem';
+import DialogMessage from './DialogMessage/DialogMessage';
 
-const MessagesWrapper = styled.div `
+const MessagesWrapper = styled.div`
 display: flex;
-justify-content:  space-between;
+justify-content: space-between;
 width: 300px;
 `;
 
-const MessagesItems = styled.div ``;
+const MessagesItems = styled.div``;
 
-const MessageItem = styled.div ``;
-
-const MessageLink = styled(NavLink)`
-text-decoration: none;
-color: #000000;
-&:hover {
-  color: #00B388;
-}
-`;
-
-const DialogMessages = styled.div ``;
-
-const DialogMessage = styled.div ``;
+const DialogMessages = styled.div``;
 
 const Messages = () => {
   return (
     <MessagesWrapper>
-     <MessagesItems>
-      <MessageItem><MessageLink to='/Messages/1'>Roman</MessageLink></MessageItem>
-      <MessageItem><MessageLink to='/Messages/2'>Arthur</MessageLink></MessageItem>
-      <MessageItem><MessageLink to='/Messages/3'> Svetlana</MessageLink></MessageItem>
-      <MessageItem><MessageLink to='/Messages/4'>Dmitry</MessageLink></MessageItem>
-      <MessageItem><MessageLink to='/Messages/5'>Victoria</MessageLink></MessageItem>
-     </MessagesItems>
-     <DialogMessages>
-     <DialogMessage>Hello, how are you?</DialogMessage>
-     <DialogMessage>Do you want to take a walk?</DialogMessage>
-     <DialogMessage>Where is my key, did you know?</DialogMessage>
-     <DialogMessage>See how it's cheap!</DialogMessage>
-     <DialogMessage>Going for a lunch, you with me?</DialogMessage>
-     </DialogMessages>
+      <MessagesItems>
+        <MessageItem name='Roman' id='1' />
+        <MessageItem name='Svetlana' id='2' />
+        <MessageItem name='Arthur' id='3' />
+        <MessageItem name='Dmitry' id='4' />
+        <MessageItem name='Victoria' id='5' />
+      </MessagesItems>
+      <DialogMessages>
+        <DialogMessage message='Hello, how are you?'/>
+        <DialogMessage message='Do you want to take a walk?'/>
+        <DialogMessage message='Where is my key, did you know?'/>
+        <DialogMessage message="See how it's cheap!"/>
+        <DialogMessage message='Going for a lunch, you with me?'/>
+      </DialogMessages>
     </MessagesWrapper>
   );
 }
