@@ -12,7 +12,7 @@ const Post = (props) => {
   return (
        <div>
       <PostPhoto src={user} alt='profile-photo'></PostPhoto>
-      <span>{props.message}</span><br/>
+      <span>{props.postMessage}</span><br/>
       <span>like: {props.likeCount}</span>
     </div>
   );

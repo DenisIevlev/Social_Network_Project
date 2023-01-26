@@ -12,22 +12,20 @@ const MessagesItems = styled.div``;
 
 const DialogMessages = styled.div``;
 
-const Messages = () => {
+const Messages = (props) => {
+  let messageNameInfoElements = props.messagesNameInfo.map(messageInfo =>
+    <MessageItem name={messageInfo.name} messageId={messageInfo.id} />);
+
+  let messageInfoElements = props.messagesInfo.map(messageInfo =>
+    <DialogMessage message={messageInfo.message} messageId={messageInfo.id} />);
+
   return (
     <MessagesWrapper>
       <MessagesItems>
-        <MessageItem name='Roman' id='1' />
-        <MessageItem name='Svetlana' id='2' />
-        <MessageItem name='Arthur' id='3' />
-        <MessageItem name='Dmitry' id='4' />
-        <MessageItem name='Victoria' id='5' />
+        {messageNameInfoElements}
       </MessagesItems>
       <DialogMessages>
-        <DialogMessage message='Hello, how are you?'/>
-        <DialogMessage message='Do you want to take a walk?'/>
-        <DialogMessage message='Where is my key, did you know?'/>
-        <DialogMessage message="See how it's cheap!"/>
-        <DialogMessage message='Going for a lunch, you with me?'/>
+        {messageInfoElements}
       </DialogMessages>
     </MessagesWrapper>
   );

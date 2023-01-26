@@ -38,7 +38,7 @@ const ProfileStyle= styled.div`
   `;
 
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
     <AppWrapper>
@@ -47,8 +47,8 @@ const App = () => {
       <NavbarStyle><Navbar /></NavbarStyle>
       <ProfileStyle>
       <Routes>
-      <Route path='/profile'  element={<Profile/>}/>
-      <Route path='/messages*' element={<Messages/>}/>
+      <Route path='/profile'  element={<Profile myPosts={props.myPosts}/>}/>
+      <Route path='/messages*' element={<Messages messagesNameInfo={props.messagesNameInfo} messagesInfo={props.messagesInfo}/>}/>
       <Route path='/music'  element={<Music/>}/>
       <Route path='/news'  element={<News/>}/>
       <Route path='/settings'  element={<Settings/>}/>

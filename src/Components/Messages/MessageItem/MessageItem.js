@@ -13,10 +13,10 @@ color: #000000;
 `;
 
 const MessageItem = (props) => {
-  let path = '/Messages/' + props.id;
+  let path = '/Messages/' + props.messageId;
   return (
     <MessageLinks>
-      <MessageLink to={path}>{props.name}</MessageLink>
+      <MessageLink to={path}> {props.name}</MessageLink>
     </MessageLinks>
   );
 }
