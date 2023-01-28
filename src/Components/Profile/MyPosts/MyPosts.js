@@ -5,7 +5,7 @@ import styled from 'styled-components';
 const MyPostsWrapper = styled.div``;
 
 const MyPosts = (props) => {
-  const posts = props.myPosts.map(post => <Post postMessage={post.message} likeCount={post.likeCount}/>);
+  const posts = props.posts.map(post => <Post postMessage={post.message} likeCount={post.likeCount}/>);
   return (
        <MyPostsWrapper>
       <h3 >My posts:</h3>

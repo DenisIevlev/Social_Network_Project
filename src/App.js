@@ -47,8 +47,8 @@ const App = (props) => {
       <NavbarStyle><Navbar /></NavbarStyle>
       <ProfileStyle>
       <Routes>
-      <Route path='/profile'  element={<Profile myPosts={props.myPosts}/>}/>
-      <Route path='/messages*' element={<Messages messagesNameInfo={props.messagesNameInfo} messagesInfo={props.messagesInfo}/>}/>
+      <Route path='/profile'  element={<Profile state={props.state.profilePage}/>}/>
+      <Route path='/messages*' element={<Messages state={props.state.messagesPage}/>}/>
       <Route path='/music'  element={<Music/>}/>
       <Route path='/news'  element={<News/>}/>
       <Route path='/settings'  element={<Settings/>}/>

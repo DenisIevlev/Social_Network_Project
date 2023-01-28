@@ -12,7 +12,7 @@ const Profile = (props) => {
   return (
     <ProfileWrapper>
     <ProfileInfo/>
-    <MyPosts myPosts={props.myPosts}/>
+    <MyPosts posts={props.state.posts}/>
     </ProfileWrapper>
   );
 }
