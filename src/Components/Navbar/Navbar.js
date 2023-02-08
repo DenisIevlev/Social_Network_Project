@@ -4,13 +4,14 @@ import {NavLink} from 'react-router-dom';
 const NavbarWrapper = styled.div `
 position: relative;
 width: 250px;
-height: 100%;
+height: 450px;
 background-color: #00B388;
 font-family: 'BeynoFont';
+box-sizing: border-box;
 `;
 
 const NavbarProfileLink = styled(NavLink)`
-position: relative;
+position: absolute;
 top: 40px;
 left: 75px;
 font-style: normal;
@@ -23,8 +24,8 @@ color: #000000;
 `;
 
 const NavbarMessagesLink = styled(NavLink)`
-position: relative;
-top: 80px;
+position: absolute;
+top: 95px;
 left: 65px;
 font-style: normal;
 font-size: 20px;
@@ -36,8 +37,8 @@ color: #000000;
 `;
 
 const NavbarNewsLink = styled(NavLink)`
-position: relative;
-top: 120px;
+position: absolute;
+top: 150px;
 left: 85px;
 font-style: normal;
 font-size: 20px;
@@ -49,8 +50,8 @@ color: #000000;
 `;
 
 const NavbarMusicLink = styled(NavLink)`
-position: relative;
-top: 160px;
+position: absolute;
+top: 205px;
 left: 80px;
 font-style: normal;
 font-size: 20px;
@@ -62,8 +63,8 @@ color: #000000;
 `;
 
 const NavbarSettingsLink = styled(NavLink) `
-position: relative;
-top: 200px;
+position: absolute;
+top: 255px;
 left: 70px;
 font-style: normal;
 font-size: 20px;
@@ -75,7 +76,7 @@ color: #000000;
 `;
 
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <NavbarWrapper>
       <NavbarProfileLink to='/Profile'>Profile</NavbarProfileLink><br/>
@@ -83,7 +84,7 @@ const Navbar = () => {
       <NavbarNewsLink to='/News'>News</NavbarNewsLink><br/>
       <NavbarMusicLink to='/Music'>Music</NavbarMusicLink><br/>
       <NavbarSettingsLink to='/Settings'>Settings</NavbarSettingsLink>
-    </NavbarWrapper>
+    </NavbarWrapper> 
   );
 }
 

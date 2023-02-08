@@ -12,9 +12,10 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 const AppWrapper = styled.div`
     display: grid;
+    box-sizing: border-box;
     margin: 0 auto;
     max-width: 1200px;
-    height: 100vh;
+    max-height: 100vh;
     grid-template-areas: 
     'h h h'
     'n p p'
@@ -47,7 +48,7 @@ const App = (props) => {
       <NavbarStyle><Navbar /></NavbarStyle>
       <ProfileStyle>
       <Routes>
-      <Route path='/profile'  element={<Profile state={props.state.profilePage}/>}/>
+      <Route path='/profile'  element={<Profile state={props.state.profilePage} addPost={props.addPost}/>}/>
       <Route path='/messages*' element={<Messages state={props.state.messagesPage}/>}/>
       <Route path='/music'  element={<Music/>}/>
       <Route path='/news'  element={<News/>}/>

@@ -14,10 +14,10 @@ const DialogMessages = styled.div``;
 
 const Messages = (props) => {
   let messageNameInfoElements = props.state.messagesNameInfo.map(messageInfo =>
-    <MessageItem name={messageInfo.name} messageId={messageInfo.id} />);
+    <MessageItem key={messageInfo.id} name={messageInfo.name} messageId={messageInfo.id} />);
 
   let messageInfoElements = props.state.messagesInfo.map(messageInfo =>
-    <DialogMessage message={messageInfo.message} messageId={messageInfo.id} />);
+    <DialogMessage key={messageInfo.id} message={messageInfo.message} messageId={messageInfo.id} />);
 
   return (
     <MessagesWrapper>
