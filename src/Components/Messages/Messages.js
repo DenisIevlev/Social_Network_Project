@@ -13,10 +13,10 @@ const MessagesItems = styled.div``;
 const DialogMessages = styled.div``;
 
 const Messages = (props) => {
-  let messageNameInfoElements = props.state.messagesNameInfo.map(messageInfo =>
+  let messageNameInfoElements = props.messagesPage.messagesNameInfo.map(messageInfo =>
     <MessageItem key={messageInfo.id} name={messageInfo.name} messageId={messageInfo.id} />);
 
-  let messageInfoElements = props.state.messagesInfo.map(messageInfo =>
+  let messageInfoElements = props.messagesPage.messagesInfo.map(messageInfo =>
     <DialogMessage key={messageInfo.id} message={messageInfo.message} messageId={messageInfo.id} />);
 
   return (

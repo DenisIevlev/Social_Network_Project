@@ -1,8 +1,12 @@
-import rerenderEntireTree from '../render';
+
+let rerenderEntireTree = () => {
+
+};
 
 let state = {
    profilePage: {
-      posts: [{ id:1, message: 'Hi, how are you?', likeCount: 0, }, { id:2, message: 'It\'s my first post', likeCount: 5, }],
+      posts: [{ id: 1, message: 'Hi, how are you?', likeCount: 0, }, { id:2, message: 'It\'s my first post', likeCount: 5, }],
+      newPostText: 'Hello there!',
    },
    messagesPage: {
       messagesNameInfo: [{ id: 1, name: 'Roman' }, { id: 2, name: 'Svetlana' },
@@ -14,15 +18,24 @@ let state = {
    },
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
    let newPost = {
-      id: 3,
-      message: postMessage,
+      id: Math.round(Math.random() * 10000),
+      message: state.profilePage.newPostText,
       likesCount: 0
    };
-
    state.profilePage.posts.push(newPost);
+   state.profilePage.newPostText = '';
    rerenderEntireTree(state);
 }
+
+export let updateNewPostText = (newText) => {
+   state.profilePage.newPostText = newText;
+   rerenderEntireTree(state);
+}
+
+export let subscribe = (observer) => {
+   rerenderEntireTree = observer;
+};
 
 export default state;
