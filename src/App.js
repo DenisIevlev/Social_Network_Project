@@ -8,7 +8,7 @@ import Settings from './Components/Settings/Settings';
 import Footer from './Components/Footer/Footer';
 import styled from 'styled-components';
 import GlobalFonts from './fonts/fontStyles';
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const AppWrapper = styled.div`
     display: grid;
@@ -31,10 +31,10 @@ const HeaderStyle = styled.div`
 const NavbarStyle = styled.div`
   grid-area: n;
   `;
-const ProfileStyle= styled.div`
+const ProfileStyle = styled.div`
   grid-area: p;
   `;
-  const FooterStyle = styled.div`
+const FooterStyle = styled.div`
   grid-area: f;
   `;
 
@@ -42,21 +42,21 @@ const ProfileStyle= styled.div`
 const App = (props) => {
   return (
     <BrowserRouter>
-    <AppWrapper>
-      <GlobalFonts/>
-      <HeaderStyle><Header /></HeaderStyle>
-      <NavbarStyle><Navbar /></NavbarStyle>
-      <ProfileStyle>
-      <Routes>
-      <Route path='/profile'  element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText} />}/>
-      <Route path='/messages*' element={<Messages messagesPage={props.state.messagesPage}/>}/>
-      <Route path='/music'  element={<Music/>}/>
-      <Route path='/news'  element={<News/>}/>
-      <Route path='/settings'  element={<Settings/>}/>
-      </Routes>
-     </ProfileStyle>
-      <FooterStyle><Footer /></FooterStyle>
-    </AppWrapper>
+      <AppWrapper>
+        <GlobalFonts />
+        <HeaderStyle><Header /></HeaderStyle>
+        <NavbarStyle><Navbar /></NavbarStyle>
+        <ProfileStyle>
+          <Routes>
+            <Route path='/profile' element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText} />} />
+            <Route path='/messages*' element={<Messages messagesPage={props.state.messagesPage} />} />
+            <Route path='/music' element={<Music />} />
+            <Route path='/news' element={<News />} />
+            <Route path='/settings' element={<Settings />} />
+          </Routes>
+        </ProfileStyle>
+        <FooterStyle><Footer /></FooterStyle>
+      </AppWrapper>
     </BrowserRouter>
   );
 }

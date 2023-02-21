@@ -11,8 +11,9 @@ const ProfileWrapper = styled.div`
 const Profile = (props) => {
   return (
     <ProfileWrapper>
-    <ProfileInfo/>
-    <MyPosts posts={props.profilePage.posts} addPost={props.addPost} updateNewPostText={props.updateNewPostText} newPostText={props.profilePage.newPostText} />
+    <ProfileInfo/>.
+    <MyPosts posts={props.profilePage.posts} addPost={props.addPost} 
+    updateNewPostText={props.updateNewPostText} newPostText={props.profilePage.newPostText} />
     </ProfileWrapper>
   );
 }
