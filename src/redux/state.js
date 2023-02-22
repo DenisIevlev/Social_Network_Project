@@ -19,23 +19,24 @@ let store = {
    _rerenderEntireTree() {
 
    },
-   addPost() {
-      let newPost = {
-         id: Math.round(Math.random() * 10000),
-         message: this._state.profilePage.newPostText,
-         likesCount: 0
-      };
-      this._state.profilePage.posts.push(newPost);
-      this._state.profilePage.newPostText = '';
-      this._rerenderEntireTree(this.getState());
-   },
-   updateNewPostText(newText) {
-      this._state.profilePage.newPostText = newText;
-      this._rerenderEntireTree(this.getState());
-   },
    subscribe(observer) {
       this._rerenderEntireTree = observer;
    },
+   dispatch(action) {
+      if (action.type === 'ADD-POST') {
+         let newPost = {
+            id: Math.round(Math.random() * 10000),
+            message: this._state.profilePage.newPostText,
+            likesCount: 0
+         };
+         this._state.profilePage.posts.push(newPost);
+         this._state.profilePage.newPostText = '';
+         this._rerenderEntireTree(this.getState());
+      } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
+         this._state.profilePage.newPostText = action.newText;
+         this._rerenderEntireTree(this.getState());
+      }
+   }
 };
 
 export default store;

@@ -48,7 +48,7 @@ const App = (props) => {
         <NavbarStyle><Navbar /></NavbarStyle>
         <ProfileStyle>
           <Routes>
-            <Route path='/profile' element={<Profile profilePage={props.state.profilePage} addPost={props.addPost} updateNewPostText={props.updateNewPostText} />} />
+            <Route path='/profile' element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />} />
             <Route path='/messages*' element={<Messages messagesPage={props.state.messagesPage} />} />
             <Route path='/music' element={<Music />} />
             <Route path='/news' element={<News />} />
