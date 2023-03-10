@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import MessageItem from './MessageItem/MessageItem';
 import DialogMessage from './DialogMessage/DialogMessage';
+import Message from './DialogMessage/Message/Message';
 
 const MessagesWrapper = styled.div`
 display: flex;
@@ -26,6 +27,7 @@ const Messages = (props) => {
       </MessagesItems>
       <DialogMessages>
         {messageInfoElements}
+        <Message newPostMessage={props.messagesPage.newMessage} dispatch={props.dispatch}/>
       </DialogMessages>
     </MessagesWrapper>
   );
