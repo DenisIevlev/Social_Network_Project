@@ -48,8 +48,8 @@ const App = (props) => {
         <NavbarStyle><Navbar /></NavbarStyle>
         <ProfileStyle>
           <Routes>
-            <Route path='/profile' element={<Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />} />
-            <Route path='/messages/*' element={<Messages messagesPage={props.state.messagesPage} dispatch={props.dispatch} />} />
+            <Route path='/profile' element={<Profile store={props.store}/>} />
+            <Route path='/messages/*' element={<Messages store={props.store} />} />
             <Route path='/music' element={<Music />} />
             <Route path='/news' element={<News />} />
             <Route path='/settings' element={<Settings />} />

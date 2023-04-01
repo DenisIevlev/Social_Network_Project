@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import MessageItem from './MessageItem/MessageItem';
 import DialogMessage from './DialogMessage/DialogMessage';
-import Message from './Message/Message';
+import MessageContainer from './Message/MessageContainer';
 
 const MessagesWrapper = styled.div`
 display: flex;
@@ -14,10 +14,11 @@ const MessagesItems = styled.div``;
 const DialogMessages = styled.div``;
 
 const Messages = (props) => {
-  let messageNameInfoElements = props.messagesPage.messagesNameInfo.map(messageInfo =>
+  let state = props.store.getState().messagesPage;
+  let messageNameInfoElements = state.messagesNameInfo.map(messageInfo =>
     <MessageItem key={messageInfo.id} name={messageInfo.name} messageId={messageInfo.id} />);
 
-  let messageInfoElements = props.messagesPage.messagesInfo.map(messageInfo =>
+  let messageInfoElements = state.messagesPage.messagesInfo.map(messageInfo =>
     <DialogMessage key={messageInfo.id} message={messageInfo.message} messageId={messageInfo.id} />);
 
   return (
@@ -27,7 +28,7 @@ const Messages = (props) => {
       </MessagesItems>
       <DialogMessages>
         {messageInfoElements}
-        <Message newPostMessage={props.messagesPage.newMessageText} dispatch={props.dispatch}/>
+        <MessageContainer store={props.store}/>
       </DialogMessages>
     </MessagesWrapper>
   );

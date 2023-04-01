@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import React from 'react';
-import { addMessageActionCreator, updateNewMessageActionCreator } from '../../../redux/messagesReducer';
 
 const MessageWrapper = styled.div`
 margin: 10px 0px 0px 10px`;
@@ -15,17 +14,17 @@ margin: 5px 0px 0px 10px`;
 
 const Message = (props) => {
   let addNewMessage = () => {
-    props.dispatch(addMessageActionCreator());
+    props.addNewMessage();
   };
 
   let onMessageChange = (event) => {
     let message = event.target.value;
-    props.dispatch(updateNewMessageActionCreator(message));
+    props.updateNewMessage(message);
   };
 
   return (
     <MessageWrapper>
-      <TextMessage onChange={onMessageChange} placeholder={'Enter your message'} value={props.newPostMessage}></TextMessage>
+      <TextMessage onChange={onMessageChange} placeholder={'Enter your message'} value={props.newMessageText}></TextMessage>
       <MessageSendler onClick={addNewMessage}>Send Message</MessageSendler>
     </MessageWrapper>
   );
