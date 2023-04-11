@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
 import Profile from './Components/Profile/Profile';
@@ -6,7 +7,7 @@ import Music from './Components/Music/Music';
 import News from './Components/News/News';
 import Settings from './Components/Settings/Settings';
 import Footer from './Components/Footer/Footer';
-import styled from 'styled-components';
+import UsersContainer from './Components/Users/UsersContainer';
 import GlobalFonts from './fonts/fontStyles';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -39,7 +40,7 @@ const FooterStyle = styled.div`
   `;
 
 
-const App = (props) => {
+const App = () => {
   return (
     <BrowserRouter>
       <AppWrapper>
@@ -48,11 +49,12 @@ const App = (props) => {
         <NavbarStyle><Navbar /></NavbarStyle>
         <ProfileStyle>
           <Routes>
-            <Route path='/profile' element={<Profile store={props.store}/>} />
-            <Route path='/messages/*' element={<Messages store={props.store} />} />
+            <Route path='/profile' element={<Profile/>} />
+            <Route path='/messages/*' element={<Messages />} />
             <Route path='/music' element={<Music />} />
             <Route path='/news' element={<News />} />
             <Route path='/settings' element={<Settings />} />
+            <Route path='/users' element={<UsersContainer/>} />
           </Routes>
         </ProfileStyle>
         <FooterStyle><Footer /></FooterStyle>

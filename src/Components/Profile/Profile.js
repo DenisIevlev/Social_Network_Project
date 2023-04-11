@@ -8,11 +8,11 @@ const ProfileWrapper = styled.div`
     `;
 
 
-const Profile = (props) => {
+const Profile = () => {
   return (
     <ProfileWrapper>
     <ProfileInfo/>
-    <MyPostsContainer store={props.store} />
+    <MyPostsContainer />
     </ProfileWrapper>
   );
 }

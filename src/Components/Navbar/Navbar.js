@@ -65,7 +65,20 @@ color: #000000;
 const NavbarSettingsLink = styled(NavLink) `
 position: absolute;
 top: 255px;
-left: 70px;
+left: 75px;
+font-style: normal;
+font-size: 20px;
+text-decoration: none;
+color: #000000;
+&:hover {
+  color: white;
+}
+`;
+
+const NavbarUsersLink = styled(NavLink) `
+position: absolute;
+top: 305px;
+left: 85px;
 font-style: normal;
 font-size: 20px;
 text-decoration: none;
@@ -84,6 +97,7 @@ const Navbar = (props) => {
       <NavbarNewsLink to='/News'>News</NavbarNewsLink><br/>
       <NavbarMusicLink to='/Music'>Music</NavbarMusicLink><br/>
       <NavbarSettingsLink to='/Settings'>Settings</NavbarSettingsLink>
+      <NavbarUsersLink to='/Users'>Users</NavbarUsersLink>
     </NavbarWrapper> 
   );
 }

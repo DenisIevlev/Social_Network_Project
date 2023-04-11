@@ -18,15 +18,17 @@ const profileReducer = (state = initialState, action) => {
             id: Math.round(Math.random() * 10000),
             message: state.newMessageText,
          };
-         let stateCopy = {...state};
-         stateCopy.messagesInfo.push(newMessage);
-         stateCopy.newMessageText = '';
-         return stateCopy;
+         return {
+            ...state,
+            newMessageText: '',
+            messagesInfo: [...state.messagesInfo, newMessage]
+         };
       }
       case UPDATE_NEW_MESSAGE_TEXT: {
-         let stateCopy = {...state};
-         stateCopy.newMessageText = action.newMessage;
-         return stateCopy;
+         return {
+            ...state,
+            newMessageText: action.newMessage
+         };
       }
       default:
          return state;
@@ -37,5 +39,5 @@ export const addMessageActionCreator = () => ({ type: ADD_MESSAGE });
 
 export const updateNewMessageActionCreator = (message) =>
    ({ type: UPDATE_NEW_MESSAGE_TEXT, newMessage: message });
-   
+
 export default profileReducer;

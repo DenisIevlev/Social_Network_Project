@@ -4,10 +4,10 @@ import MessageContainer from './Message/MessageContainer';
 const MessagesWrapper = styled.div`;
 `;
 
-const Messages = (props) => {
+const Messages = () => {
   return (
     <MessagesWrapper>
-        <MessageContainer store={props.store}/>
+        <MessageContainer/>
     </MessagesWrapper>
   );
 }
