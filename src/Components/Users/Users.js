@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import userPhoto from '../../img/user.svg';
+import axios from 'axios';
 
 const UsersWrapper = styled.div``;
 
@@ -10,23 +11,27 @@ const UserInfoWrapper = styled.div``;
 const UsersButton = styled.button`margin: 0px 0px 10px 0px`;
 
 const UsersPhoto = styled.img`
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
 `;
 
-const Users = (props) => { 
+const Users = (props) => {
+  const getUsers = () => {
   if (props.users.length === 0) {
-  props.setUsers([{ id: 1, username: 'Victor', photoURL: userPhoto, status: 'Make love not war ', location: { country: 'Ukraine', city: 'Nikolaev' }, follow: true, },
-  { id: 2, username: 'John', photoURL: userPhoto, status: 'Remember who you are ', location: { country: 'USA', city: 'Washington' }, follow: true, },
-  { id: 3, username: 'Paul', photoURL: userPhoto, status: 'Live without regrets ', location: { country: 'Italy', city: 'Rome' }, follow: true, }]);
+    axios.get("https://social-network.samuraijs.com/api/1.0/users")
+      .then(response => {
+        props.setUsers(response.data.items);
+      });
+    };
   };
-  return <UsersWrapper>
+  return <UsersWrapper> 
+    <UsersButton onClick={getUsers}>Get Users</UsersButton>
     {props.users.map(users => <UserInfoWrapper key={users.id}>
-      <UsersPhotoWrapper><UsersPhoto src={users.photoURL} /></UsersPhotoWrapper>
-      <UserInfoWrapper>{users.username} </UserInfoWrapper> <UserInfoWrapper>{users.status}</UserInfoWrapper>
-      <UserInfoWrapper>{users.location.country}</UserInfoWrapper><UserInfoWrapper>{users.location.city}</UserInfoWrapper>
-      <UserInfoWrapper>{users.follow ? <UsersButton onClick={() => props.unfollow(users.id)}>Follow</UsersButton> : <UsersButton onClick={() => props.follow(users.id)}>Unfollow</UsersButton>}</UserInfoWrapper>
-      </UserInfoWrapper>)}
+      <UsersPhotoWrapper><UsersPhoto src={users.photos.small != null ? users.photos.small : userPhoto} /></UsersPhotoWrapper>
+      <UserInfoWrapper>{users.name} </UserInfoWrapper> <UserInfoWrapper>{users.status}</UserInfoWrapper>
+      <UserInfoWrapper></UserInfoWrapper><UserInfoWrapper></UserInfoWrapper>
+      <UserInfoWrapper>{users.followed ? <UsersButton onClick={() => props.follow(users.id)}>Follow</UsersButton> :  <UsersButton onClick={() => props.unfollow(users.id)}>Unfollow</UsersButton>}</UserInfoWrapper>
+    </UserInfoWrapper>)}
   </UsersWrapper>
 };
 
