@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
 
-const NavbarWrapper = styled.div `
+const Div = styled.div `
 position: relative;
 width: 250px;
 height: 450px;
@@ -10,7 +10,7 @@ font-family: 'BeynoFont';
 box-sizing: border-box;
 `;
 
-const NavbarProfileLink = styled(NavLink)`
+const ProfileLink = styled(NavLink)`
 position: absolute;
 top: 40px;
 left: 75px;
@@ -23,7 +23,7 @@ color: #000000;
 }
 `;
 
-const NavbarMessagesLink = styled(NavLink)`
+const MessagesLink = styled(NavLink)`
 position: absolute;
 top: 95px;
 left: 65px;
@@ -36,7 +36,7 @@ color: #000000;
 }
 `;
 
-const NavbarNewsLink = styled(NavLink)`
+const NewsLink = styled(NavLink)`
 position: absolute;
 top: 150px;
 left: 85px;
@@ -49,7 +49,7 @@ color: #000000;
 }
 `;
 
-const NavbarMusicLink = styled(NavLink)`
+const MusicLink = styled(NavLink)`
 position: absolute;
 top: 205px;
 left: 80px;
@@ -62,7 +62,7 @@ color: #000000;
 }
 `;
 
-const NavbarSettingsLink = styled(NavLink) `
+const SettingsLink = styled(NavLink) `
 position: absolute;
 top: 255px;
 left: 75px;
@@ -75,7 +75,7 @@ color: #000000;
 }
 `;
 
-const NavbarUsersLink = styled(NavLink) `
+const UsersLink = styled(NavLink) `
 position: absolute;
 top: 305px;
 left: 85px;
@@ -89,16 +89,16 @@ color: #000000;
 `;
 
 
-const Navbar = (props) => {
+const Navbar = () => {
   return (
-    <NavbarWrapper>
-      <NavbarProfileLink to='/Profile'>Profile</NavbarProfileLink><br/>
-      <NavbarMessagesLink to='/Messages'>Messages</NavbarMessagesLink><br/>
-      <NavbarNewsLink to='/News'>News</NavbarNewsLink><br/>
-      <NavbarMusicLink to='/Music'>Music</NavbarMusicLink><br/>
-      <NavbarSettingsLink to='/Settings'>Settings</NavbarSettingsLink>
-      <NavbarUsersLink to='/Users'>Users</NavbarUsersLink>
-    </NavbarWrapper> 
+    <Div>
+      <ProfileLink to='/Profile'>Profile</ProfileLink><br/>
+      <MessagesLink to='/Messages'>Messages</MessagesLink><br/>
+      <NewsLink to='/News'>News</NewsLink><br/>
+      <MusicLink to='/Music'>Music</MusicLink><br/>
+      <SettingsLink to='/Settings'>Settings</SettingsLink>
+      <UsersLink to='/Users'>Users</UsersLink>
+    </Div> 
   );
 }
 

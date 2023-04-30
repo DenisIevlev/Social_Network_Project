@@ -3,13 +3,13 @@ import React from 'react';
 import MessageItem from '../MessageItem/MessageItem';
 import DialogMessage from '../DialogMessage/DialogMessage'
 
-const MessageWrapper = styled.div`
+const Div = styled.div`
 `;
 
-const TextMessage = styled.textarea`
+const Textarea = styled.textarea`
 `;
 
-const MessageSendler = styled.button`
+const MessageButton = styled.button`
 margin: 5px 0px 0px 0px`;
 
 const ItemsWrapper = styled.div`
@@ -44,7 +44,7 @@ const Message = (props) => {
   };
 
   return (
-    <MessageWrapper>
+    <Div>
       <ItemsWrapper>
         <MessagesItems>
           {messageNameInfoElements}
@@ -54,10 +54,10 @@ const Message = (props) => {
         </DialogMessages>
       </ItemsWrapper>
       <TextareaWrapper>
-        <TextMessage onChange={onMessageChange} placeholder={'Enter your message'} value={props.newMessageText}></TextMessage><br/>
-        <MessageSendler onClick={addNewMessage}>Send Message</MessageSendler>
+        <Textarea onChange={onMessageChange} placeholder={'Enter your message'} value={props.newMessageText}></Textarea><br/>
+        <MessageButton onClick={addNewMessage}>Send Message</MessageButton>
       </TextareaWrapper>
-    </MessageWrapper>
+    </Div>
   );
 }
 

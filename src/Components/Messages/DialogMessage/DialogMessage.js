@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
 
-const DialogItems = styled.div`
+const Div = styled.div`
 margin: 0px 0px 0px 10px`;
 
-const DialogItem = styled.div``;
+const Span = styled.span``;
 
 
 
 const DialogMessage = (props) => {
   return (
-    <DialogItems>
-      <DialogItem>{props.message}</DialogItem>
-    </DialogItems>
+    <Div>
+      <Span>{props.message}</Span>
+    </Div>
   );
 }
 

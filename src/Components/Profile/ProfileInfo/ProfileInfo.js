@@ -1,14 +1,16 @@
 import user from './../../../img/user.svg';
 import styled from 'styled-components';
 
-const ProfileInfoWrapper = styled.div``;
+const Div = styled.div``;
 
-const ProfilePhoto = styled.img`
+const Img = styled.img`
     width: 20px;
     height: 20px;
+    position: relative;
+    left: 5px;
 `;
 
-const ProfileData = styled.span`
+const Span = styled.span`
     position: relative;
     font-family: 'Arial';
     left: 5px;
@@ -19,14 +21,14 @@ const ProfileData = styled.span`
 
 const ProfileInfo = () => {
   return (
-    <ProfileInfoWrapper>
-      <ProfilePhoto src={user} alt='profile-photo'></ProfilePhoto>
-      <ProfileData>User Name:</ProfileData><br />
-      <ProfileData>Date of Birth:</ProfileData><br />
-      <ProfileData>City:</ProfileData><br />
-      <ProfileData >Education: </ProfileData><br />
-      <ProfileData>Web Site:</ProfileData><br />
-    </ProfileInfoWrapper>
+    <Div>
+      <Img src={user} alt='profile-photo'></Img><br></br>
+      <Span>User Name:</Span><br />
+      <Span>Date of Birth:</Span><br />
+      <Span>City:</Span><br />
+      <Span >Education: </Span><br />
+      <Span>Web Site:</Span><br />
+    </Div>
   );
 }
 

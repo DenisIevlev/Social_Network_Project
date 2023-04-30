@@ -2,11 +2,11 @@ import Post from './Post/Post';
 import styled from 'styled-components';
 import React from 'react';
 
-const MyPostsWrapper = styled.div``;
+const Div = styled.div``;
 
-const MyPostsTextarea = styled.textarea``;
+const Textarea = styled.textarea``;
 
-const SendMyPostsText = styled.button`
+const Button = styled.button`
 margin: 5px 0px 0px 120px`;
 
  const MyPosts = (props) => {
@@ -22,12 +22,12 @@ margin: 5px 0px 0px 120px`;
   };
 
   return (
-    <MyPostsWrapper>
+    <Div>
       <h3 >My posts:</h3>
-      <MyPostsTextarea onChange={onPostChange} placeholder='Enter your post' value={props.newPostText} rows="2" cols="20" ></MyPostsTextarea><br></br>
-      <SendMyPostsText onClick={onAddNewPost} >Send</SendMyPostsText>
+      <Textarea onChange={onPostChange} placeholder='Enter your post' value={props.newPostText} rows="2" cols="20" ></Textarea><br></br>
+      <Button onClick={onAddNewPost} >Send</Button>
       {posts}
-    </MyPostsWrapper>
+    </Div>
   );
 }
 

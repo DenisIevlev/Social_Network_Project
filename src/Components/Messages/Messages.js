@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 import MessageContainer from './Message/MessageContainer';
 
-const MessagesWrapper = styled.div`;
+const Div = styled.div`;
 `;
 
 const Messages = () => {
   return (
-    <MessagesWrapper>
+    <Div>
         <MessageContainer/>
-    </MessagesWrapper>
+    </Div>
   );
 }
 
