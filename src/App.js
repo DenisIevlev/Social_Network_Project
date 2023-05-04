@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Header from './Components/Header/Header';
 import Navbar from './Components/Navbar/Navbar';
-import Profile from './Components/Profile/Profile';
+import ProfileContainer from './Components/Profile/ProfileContainer';
 import Messages from './Components/Messages/Messages';
 import Music from './Components/Music/Music';
 import News from './Components/News/News';
@@ -49,12 +49,12 @@ const App = () => {
         <NavbarStyle><Navbar /></NavbarStyle>
         <ProfileStyle>
           <Routes>
-            <Route path='/profile' element={<Profile/>} />
+            <Route path='/profile/*' element={<ProfileContainer />} />
             <Route path='/messages/*' element={<Messages />} />
             <Route path='/music' element={<Music />} />
             <Route path='/news' element={<News />} />
             <Route path='/settings' element={<Settings />} />
-            <Route path='/users' element={<UsersContainer/>} />
+            <Route path='/users' element={<UsersContainer />} />
           </Routes>
         </ProfileStyle>
         <FooterStyle><Footer /></FooterStyle>

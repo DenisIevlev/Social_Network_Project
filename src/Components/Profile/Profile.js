@@ -8,11 +8,11 @@ const Div = styled.div`
     `;
 
 
-const Profile = () => {
+const Profile = (props) => {
   return (
     <Div>
-    <ProfileInfo/>
-    <MyPostsContainer />
+      <ProfileInfo profile={props.profile} />
+      <MyPostsContainer />
     </Div>
   );
 }

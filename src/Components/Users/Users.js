@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import userPhoto from '../../img/user.svg';
+import { NavLink } from 'react-router-dom';
 
 const Div = styled.div``;
 
@@ -34,7 +35,7 @@ const Users = (props) => {
   return (
     <Div>
       {props.users.map(users => <Div key={users.id}>
-        <Div><Img src={users.photos.small != null ? users.photos.small : userPhoto} /></Div>
+        <Div><NavLink to={`/profile/${users.id}`}><Img src={users.photos.small != null ? users.photos.small : userPhoto} /></NavLink></Div>
         <Div>{users.name} </Div> <Div>{users.status}</Div>
         <Div>{users.follow ? <Button onClick={() => props.unfollow(users.id)}>Unfollow</Button> : <Button onClick={() => props.follow(users.id)}>Follow</Button>}</Div>
       </Div>)}
