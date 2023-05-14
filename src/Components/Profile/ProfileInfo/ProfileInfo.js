@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import Preloader from '../../common/Preloader/Preloader';
 import agree from '../../../img/agree.svg';
 import cancel from '../../../img/cancel.svg';
+import user from '../../../img/user.svg';
 
 const Div = styled.div``;
 
@@ -35,7 +36,7 @@ const ProfileInfo = (props) => {
   }
   return (
     <Div>
-      <Img src={props.profile.photos.small} alt='profile-photo'></Img><br></br>
+      <Img src={props.profile.photos.small ? props.profile.photos.small : user} alt='profile-photo'></Img><br></br>
       <Span>User Name: {props.profile.fullName}</Span><br />
       <Span>Status: {props.profile.aboutMe}</Span><br />
       <Span>Github: {props.profile.contacts.github}</Span><br />

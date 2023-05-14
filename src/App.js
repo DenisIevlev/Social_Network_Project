@@ -49,7 +49,7 @@ const App = () => {
         <NavbarStyle><Navbar /></NavbarStyle>
         <ProfileStyle>
           <Routes>
-            <Route path='/profile/*' element={<ProfileContainer />} />
+            <Route path='/profile/:userId?' element={<ProfileContainer />} />
             <Route path='/messages/*' element={<Messages />} />
             <Route path='/music' element={<Music />} />
             <Route path='/news' element={<News />} />
