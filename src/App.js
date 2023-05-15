@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Header from './Components/Header/Header';
+import HeaderContainer from './Components/Header/HeaderContainer';
 import Navbar from './Components/Navbar/Navbar';
 import ProfileContainer from './Components/Profile/ProfileContainer';
 import Messages from './Components/Messages/Messages';
@@ -45,7 +45,7 @@ const App = () => {
     <BrowserRouter>
       <AppWrapper>
         <GlobalFonts />
-        <HeaderStyle><Header /></HeaderStyle>
+        <HeaderStyle><HeaderContainer /></HeaderStyle>
         <NavbarStyle><Navbar /></NavbarStyle>
         <ProfileStyle>
           <Routes>
