@@ -3,35 +3,30 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const Div = styled.div`
+height: 70px;
 background-color: #00B388;
+display: flex;
+justify-content: space-between;
+align-items: center;
 `;
 
 const Img = styled.img`
-position: relative;
 width: 30px;
 height: 30px;
-left: 20px;
-top: 12px;
+margin-left: 20px;
 `;
 
 const Text = styled.h1`
-position: relative;
-left: 55px;
-bottom: 30px;
 font-size: 20px;
 font-family: 'BeynoFont';
+margin-right: 980px;
 `;
 
 const LoginText = styled.span`
-position: absolute; 
-top: 20px; 
-left: 1200px;
+margin-right: 20px;
 `;
 
 const LoginLink = styled(NavLink)`
-position: absolute;
-top: 20px;
-left: 1200px;
 font-style: normal;
 font-size: 15px;
 text-decoration: none;

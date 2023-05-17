@@ -4,11 +4,11 @@ const Div = styled.div`
 background-color: #00B388;
 height: 70px;
 width: 1200px;
+display: flex;
 `;
 
 const Span = styled.span`
-position: absolute;
-padding: 10px;
+padding: 20px;
 font-family: 'Arial';
 width: 1200px;
 `;

@@ -9,23 +9,17 @@ const Div = styled.div``;
 const Img = styled.img`
     width: 35px;
     height: 35px;
-    position: relative;
-    left: 5px;
 `;
 
 const ImgSvg = styled.img`
     width: 20px;
     height: 20px;
-    position: absolute;
-    padding-left: 5px;
+    margin: 0px 0px -3px 0px;
 `;
 
 
 const Span = styled.span`
-    position: relative;
     font-family: 'Arial';
-    left: 5px;
-    bottom: 2px;
     `;
 
 

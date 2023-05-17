@@ -6,6 +6,8 @@ const Div = styled.div``;
 
 const Textarea = styled.textarea``;
 
+const H3 = styled.h3``;
+
 const Button = styled.button`
 margin: 5px 0px 0px 120px`;
 
@@ -23,7 +25,7 @@ margin: 5px 0px 0px 120px`;
 
   return (
     <Div>
-      <h3 >My posts:</h3>
+      <H3>My posts:</H3>
       <Textarea onChange={onPostChange} placeholder='Enter your post' value={props.newPostText} rows="2" cols="20" ></Textarea><br></br>
       <Button onClick={onAddNewPost} >Send</Button>
       {posts}

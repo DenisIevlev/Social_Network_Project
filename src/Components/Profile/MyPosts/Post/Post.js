@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import user from './../../../../img/user.svg';
 
-const Div  = styled.div`
-`;
+const Div  = styled.div``;
+
 const Img  = styled.img`
     width: 20px;
     height: 20px;
-    margin: 10px 0px 0px 0px;
-`;
+    `;
+
 const Span = styled.span`
 `;
 

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import userPhoto from '../../img/user.svg';
 import { NavLink } from 'react-router-dom';
+import { usersAPI } from '../../api/api';
 
 const Div = styled.div``;
 
@@ -37,7 +38,26 @@ const Users = (props) => {
       {props.users.map(users => <Div key={users.id}>
         <Div><NavLink to={`/profile/${users.id}`}><Img src={users.photos.small != null ? users.photos.small : userPhoto} /></NavLink></Div>
         <Div>{users.name} </Div> <Div>{users.status}</Div>
-        <Div>{users.follow ? <Button onClick={() => props.unfollow(users.id)}>Unfollow</Button> : <Button onClick={() => props.follow(users.id)}>Follow</Button>}</Div>
+        <Div>{users.follow ? <Button disabled={props.followingInProgress.some(id => id === users.id)} onClick={() => {
+          props.toggleFollowingInProgress(true, users.id);
+          usersAPI.unfollow(users.id).then(data => {
+            if (data.resultCode == 0) {
+              props.unfollow(users.id)
+            }
+            props.toggleFollowingInProgress(false, users.id);
+          });
+        }
+        }>Unfollow</Button> :
+          <Button disabled={props.followingInProgress.some(id => id === users.id)} onClick={() => {
+            props.toggleFollowingInProgress(true, users.id);
+            usersAPI.follow(users.id).then(data => {
+              if (data.resultCode == 0) {
+                props.follow(users.id)
+              }
+              props.toggleFollowingInProgress(false, users.id);
+            });
+          }
+          }>Follow</Button>}</Div>
       </Div>)}
       <Div>
         {slicedPages.map(page => {
