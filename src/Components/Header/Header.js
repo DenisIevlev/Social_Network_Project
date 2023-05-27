@@ -29,6 +29,7 @@ margin-right: 20px;
 const LoginLink = styled(NavLink)`
 font-style: normal;
 font-size: 15px;
+margin-right: 20px;
 text-decoration: none;
 color: #000000;
 font-family: 'BeynoFont';

@@ -13,8 +13,8 @@ export const usersAPI = {
   getUsers(currentPage = 1, pageSize = 10) {
     return instance.get(`users?page=${currentPage}&count=${pageSize}`).then(response => response.data);
   },
-  getAuth() {
-    return instance.get(`auth/me`).then(response => response.data);
+  getProfile(usersId) {
+    return instance.get(`profile/${usersId}`);
   },
   follow(usersId) {
     return instance.post(`follow/${usersId}`).then(response => response.data);
@@ -22,4 +22,10 @@ export const usersAPI = {
   unfollow(usersId) {
     return instance.delete(`follow/${usersId}`).then(response => response.data);
   }
+};
+
+export const authAPI = {
+  getAuth() {
+    return instance.get(`auth/me`).then(response => response.data);
+  },
 };
