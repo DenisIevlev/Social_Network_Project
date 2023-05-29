@@ -8,6 +8,7 @@ import News from './Components/News/News';
 import Settings from './Components/Settings/Settings';
 import Footer from './Components/Footer/Footer';
 import UsersContainer from './Components/Users/UsersContainer';
+import Login from './Components/Login/Login';
 import GlobalFonts from './fonts/fontStyles';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -55,6 +56,7 @@ const App = () => {
             <Route path='/news' element={<News />} />
             <Route path='/settings' element={<Settings />} />
             <Route path='/users' element={<UsersContainer />} />
+            <Route path='/login' element={<Login />} />
           </Routes>
         </ProfileStyle>
         <FooterStyle><Footer /></FooterStyle>

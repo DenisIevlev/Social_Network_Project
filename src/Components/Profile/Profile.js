@@ -9,7 +9,7 @@ const Div = styled.div`
 const Profile = (props) => {
   return (
     <Div>
-      <ProfileInfo profile={props.profile} />
+      <ProfileInfo profile={props.profile} isAuth={props.isAuth}/>
       <MyPostsContainer />
     </Div>
   );

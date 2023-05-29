@@ -32,6 +32,7 @@ const Users = (props) => {
   } else {
     slicedPages = pages.slice(currentPage - 3, currentPage + 2);
   }
+
   return (
     <Div>
       {props.users.map(users => <Div key={users.id}>
